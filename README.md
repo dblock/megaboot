@@ -2,6 +2,8 @@
 
 MegaBoot 0.9 is a DOS multiple-configuration boot driver written by David Jilli (Titanik) of DSF Productions in 1996. It displays a full-screen menu while DOS processes `CONFIG.SYS`, then rewrites the in-memory configuration so DOS continues with only the selected block.
 
+MegaBoot is a spiritual successor to [Autoconf](https://github.com/dblock/autoconf), an earlier DOS boot-configuration driver.
+
 ## Build
 
 The recovered source has been normalized for [JWasm](https://github.com/Baron-von-Riedesel/JWasm): invalid `0xA0` spacing bytes were replaced with spaces, TASM's multi-register `push` and `pop` statements were expanded, and two identifiers were adjusted for MASM-compatible syntax.

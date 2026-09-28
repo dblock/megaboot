@@ -2,6 +2,8 @@
 
 MegaBoot 0.9 is a DOS multiple-configuration boot driver written by David Jilli (Titanik) of DSF Productions in 1996. It displays a full-screen menu while DOS processes `CONFIG.SYS`, then rewrites the in-memory configuration so DOS continues with only the selected block.
 
+![Selecting the DOOM configuration](megaboot-doom-boot.gif)
+
 MegaBoot is a spiritual successor to [Autoconf](https://github.com/dblock/autoconf), an earlier DOS boot-configuration driver.
 
 ## Build
@@ -35,8 +37,6 @@ The sample menu contains:
 - `A` - Minimal DOS
 - `B` - DOOM
 - `C` - Windows 95
-
-![Selecting the DOOM configuration](megaboot-doom-boot.gif)
 
 MegaBoot recognizes configuration markers written as `INSTALL=%<letter>` and requires a final `INSTALL=%ENDCONFIG` marker. These lines are private control records that MegaBoot rewrites in memory before DOS continues processing `CONFIG.SYS`.
 

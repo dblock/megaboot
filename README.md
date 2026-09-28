@@ -52,6 +52,21 @@ The original code also changed each `INSTALL=%...` marker into `0%...`, which MS
 
 The tested image is derived from the `Dos5.0.img` boot disk in <https://archive.org/download/dos-5.0-bootdisk/DOS5.0_bootdisk.zip>, downloaded separately by the user. MS-DOS 5 remains proprietary Microsoft software.
 
+From the repository root on macOS, install `mtools`, download and extract the archive, then create the private demo image:
+
+```sh
+brew install mtools
+curl -fLO https://archive.org/download/dos-5.0-bootdisk/DOS5.0_bootdisk.zip
+unzip DOS5.0_bootdisk.zip
+cp DOS5.0_bootdisk/Dos5.0.img megaboot-msdos5.img
+
+mcopy -o -i megaboot-msdos5.img MEGABOOT.SYS ::MEGABOOT.SYS
+mcopy -o -i megaboot-msdos5.img CONFIG.SYS ::CONFIG.SYS
+mcopy -o -i megaboot-msdos5.img AUTOEXEC.BAT ::AUTOEXEC.BAT
+```
+
+The directory created by `unzip` may differ between archive versions. Locate `Dos5.0.img` and adjust the `cp` source path if necessary.
+
 `megaboot-msdos5.img` is ignored by Git and must not be committed, published, or redistributed without permission from the applicable rights holder.
 
 ## License
